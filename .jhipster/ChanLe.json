@@ -1,0 +1,57 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "giaiDau",
+            "otherEntityName": "giaiDau",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "uploadVersion",
+            "otherEntityName": "uploadVersion",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "tieuDe",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stt",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "doiBong",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tongSoTran",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "soTranLe",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tiLeLe",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "soTranChan",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tyLeChan",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180122050251",
+    "entityTableName": "chan_le",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

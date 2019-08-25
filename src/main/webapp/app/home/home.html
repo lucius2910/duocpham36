@@ -1,0 +1,132 @@
+<div class="container home">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="owl-carousel owl-theme">
+                <div ng-repeat="item in vm.slides track by $index">
+                    <img src="{{API_CONFIG.IMG_URL + item.imgUrl}}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center" style="padding: 20px 0">
+        <div class="col-12 col-md-9 col-lg-10">
+            <div class="input-group input-serach">
+                <input type="text" id="searchText" placeholder="Tìm tên thuốc cần đặt hàng ..." class="form-control"
+                    autocomplete="off" ng-model="vm.searchTextData" style="height: 40px">
+
+                <span class="input-group-btn" style="background-color: #ff0000bf; width: 60px">
+                    <button type="button" class="btn btn-default btn-search" ng-click="vm.search(vm.searchTextData)" style="border: none; height: 38px; width: 100%">
+                        <i class="fa fa-search" style="font-size: 16px"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+
+        <div class="col-5 col-md-3 col-lg-2">
+            <button class="btn btn-success btn-search-cart" ng-click="vm.thanhToan()">
+                <img src="{{API_CONFIG.IMG_URL + 'icon-cart-option2.png'}}" alt="cart">
+                <p>Giỏ hàng {{}}</p>
+            </button>
+        </div>
+    </div>
+
+    <!-- <div class="row">
+        <div class="container text-center" style="margin: 30px 0 30px 0">
+            <a href="#" ng-click="vm.login()" class="btn btn-success">Vui lòng đăng nhập để tìm kiếm và đặt hàng với hơn 5000 sản phẩm</a>
+        </div>
+    </div> -->
+
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-right-tab">
+            <div class="product-featured-tab-content">
+                <div class="tab-container">
+                    <div class="tab-panel active">
+                        <ul class="nav navbar-nav">
+                            <li class="title-active active">Sản phẩm giá hot</li>
+                        </ul>
+                        <div class="clearfix"></div>
+                        <div class="box-right" style="width: 100%">
+                            <ul class="row product-list">
+
+                                <li class="col-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 product" ng-repeat="item in vm.lstProc track by $index">
+                                    <div class="container-product">
+                                        <div class="left-block">
+                                            <a ui-sref="product-detail({name: item.title, nameCatalog: item.catalog, id: item.id})">
+                                                <img class="img-responsive" alt="product" ng-src="{{item.imgUrl}}">
+                                            </a>
+                                            <div class="is-choose" ng-if="item.isChoose">
+                                                Đã chọn
+                                            </div>
+                                            <div class="is-change" ng-if="item.is">
+                                                <a title="Biến động giá" href="javascript:void(0)">
+                                                    <i class="fa fa-line-chart" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                            <div class="add-to-cart">
+                                                <div class="add-num-proc">
+                                                    <div class="input-group">
+                                                        <span class="input-group-btn">
+                                                            <button type="button" class="btn btn-default btn-customs"
+                                                                ng-click="vm.minusNumProc(item.id)">
+                                                                <i class="fa fa-minus"></i>
+                                                            </button>
+                                                        </span>
+                                                        <input type="text" class="form-control add-num" ng-model="item.count" />
+                                                        <span class="input-group-btn">
+                                                            <button type="button" class="btn btn-default btn-customs"
+                                                                ng-click="vm.addNumProc(item.id)">
+                                                                <i class="fa fa-plus"></i>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <a title="Add to Cart" href="javascript:void(0)" ng-click="vm.addToCart(item)"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right-block">
+                                            <h5 class="product-name"><a ui-sref="product-detail({name: item.title, nameCatalog: item.catalog, id: item.id})">{{item.title}}</a></h5>
+                                            <div class="content_price">
+                                                <span ng-if="!item.oldPrice" class="price product-price">{{item.price | number:0}} ₫</span>
+                                                <span ng-if="item.oldPrice" class="price product-price price-hot">{{item.price | number:0}} ₫</span>
+                                                <span ng-if="item.oldPrice" class="price old-price">{{item.oldPrice | number:0}} ₫</span>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                            <!-- <button class="btn btn-success btn-load-more" ng-click="vm.loadMore()">
+                                <span>Xem thêm sản phẩm</span>
+                            </button> -->
+
+                            <div class="loader" ng-show="vm.isLoading"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.owl-carousel').owlCarousel({
+            items: 1,
+            nav: true,
+            loop: true,
+            mouseDrag: true,
+            autoPlay: true,
+            lazyLoad: true,
+            smartSpeed: 350
+        });
+    });
+</script>

@@ -1,0 +1,225 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "giaiDau",
+            "otherEntityName": "giaiDau",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "uploadVersion",
+            "otherEntityName": "uploadVersion",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "tieuDe",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "doiBong",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soTran",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "thang",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "hoa",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "thua",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "soBanThang",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "soBanThua",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "heSo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "diem",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "cacTranDaKt",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tyLeCacTranDaKt",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cacTranChuaDienRa",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tyLeCacTranChuaDienRa",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ctSn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tyLeCtSn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tranHoa",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tyLeTranHoa",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ctSk",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tyLeCtSk",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tongSoBt",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tbTSBt",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soBtSn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tbSoBtSn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soBtSk",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tbSoBtSk",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dbCkTotnhat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soBanDbCkTotnhat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dbCkTotnhatSn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soBanDbCkTotnhatSn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dbCkTotnhatSk",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soBanDbCkTotnhatSk",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dbCkKemnhat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soBanDbCkKemnhat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dbCkKemnhatSn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soBanDbCkKemnhatSn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dbCkKemnhatSk",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soBanDbCkKemNhatSk",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dbPnTotnhat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soBanDbPnTotnhat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dbPnTotNhatSn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soBanDbPnTotnhatSn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dbPnTotnhatSk",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soBanDbPnTotnhatSk",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dbPnKemnhat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soBanDbPnKemnhat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dbPnKemNhatSn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soBanDbPnKemnhatSn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dbPnKemnhatSk",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soBanDbPnKemnhatSk",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180122050248",
+    "entityTableName": "tong_quat",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

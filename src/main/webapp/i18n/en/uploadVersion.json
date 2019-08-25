@@ -1,0 +1,23 @@
+{
+    "footballBeApp": {
+        "uploadVersion" : {
+            "home": {
+                "title": "Upload Versions",
+                "createLabel": "Create a new Upload Version",
+                "createOrEditLabel": "Create or edit a Upload Version"
+            },
+            "created": "A new Upload Version is created with identifier {{ param }}",
+            "updated": "A Upload Version is updated with identifier {{ param }}",
+            "deleted": "A Upload Version is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Upload Version {{ id }}?"
+            },
+            "detail": {
+                "title": "Upload Version"
+            },
+            "name": "Name",
+            "type": "Type",
+            "createdAt": "Created At"
+        }
+    }
+}

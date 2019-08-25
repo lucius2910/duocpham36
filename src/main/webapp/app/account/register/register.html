@@ -1,0 +1,120 @@
+<div>
+    <div class="container form-register">
+
+        <!-- <jhi-alert></jhi-alert> -->
+        <form autocomplete="off" ng-submit="vm.register()">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="tttk">Thông tin tài khoản</h2>
+                    <div class="form-group">
+                        <span class="label-control" data-translate="global.form.username"></span>
+                        <div class="input-group">
+                            <input name="login" type="login" class="form-control" ng-model="vm.registerAccount.username"
+                                placeholder="{{'global.form.username.placeholder' | translate}}" ng-minlength="3"
+                                ng-maxlength="20" ng-pattern="/^[_'.@A-Za-z0-9-]*$/" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="label-control" data-translate="global.form.email"></span>
+                        <div class="input-group">
+                            <input name="email" type="email" class="form-control" ng-model="vm.registerAccount.email"
+                                placeholder="{{'global.form.email' | translate}}" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <span class="label-control" data-translate="global.form.newpassword"></span>
+                        <div class="input-group">
+                            <input name="password" type="password" class="form-control"
+                                placeholder="{{'global.form.newpassword.placeholder' | translate}}"
+                                ng-model="vm.registerAccount.password" ng-minlength="4" ng-maxlength="50" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="label-control" data-translate="global.form.confirmpassword"></span>
+                        <div class="input-group">
+                            <input name="confirmPassword" type="password" class="form-control"
+                                ng-model="vm.confirmPassword"
+                                placeholder="{{'global.form.confirmpassword.placeholder' | translate}}" required />
+                        </div>
+                        <span ng-show="vm.confirmPassword != vm.registerAccount.password">Mật khẩu không khớp</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 style="    padding: 30px 0 10px 0; font-weight: 600;">Thông tin khách hàng</h2>
+                    <div class="form-group">
+                        <span class="label-control">Họ</span>
+                        <div class="input-group">
+                            <input name="firstname" type="text" class="form-control"
+                                ng-model="vm.registerAccount.first_name" ng-minlength="3" ng-maxlength="20" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="label-control">Tên</span>
+                        <div class="input-group">
+                            <input name="lastname" type="text" class="form-control"
+                                ng-model="vm.registerAccount.last_name" ng-minlength="3" ng-maxlength="20" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="label-control">Tên nhà thuốc</span>
+                        <div class="input-group">
+                            <input name="lastname" type="text" class="form-control"
+                                ng-model="vm.registerAccount.company" ng-minlength="3" ng-maxlength="200" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="label-control">Địa chỉ giao hàng</span>
+                        <div class="input-group">
+                            <input name="lastname" type="text" class="form-control"
+                                ng-model="vm.registerAccount.address" ng-minlength="3" ng-maxlength="500" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="label-control">Tỉnh thành phố</span>
+                        <div class="input-group">
+                            <input name="lastname" type="text" class="form-control"
+                                ng-model="vm.registerAccount.city" ng-minlength="3" ng-maxlength="200" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="label-control">Số điện thoại</span>
+                        <div class="input-group">
+                            <input name="phone" type="phone" class="form-control" ng-model="vm.registerAccount.phone"
+                                ng-pattern="/^[0-9]*$/" required />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <button ng-disabled="formContact.$invalid || vm.confirmPassword != vm.registerAccount.password"
+                        type="submit" class="btn btn-success btn-custom no-focus" style="width: 100px">
+                        <span data-translate="register.form.button"></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="group-alert" style="top: 52px!important">
+    <div class="popup-alert popup-alert-show" ng-show="vm.success">
+        <button ng-click="vm.removeAlert()">
+            <i class="fa fa-close"></i>
+        </button>
+
+        <p class="title">Thông báo:</p>
+        <p class="p_content">Đăng ký tài khoản thành công</p>
+    </div>
+</div>

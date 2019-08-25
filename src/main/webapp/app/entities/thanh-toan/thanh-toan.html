@@ -1,0 +1,151 @@
+<div class="container" id="columns">
+
+    <div class="page-content checkout-page">
+        <form name="formCheckout" class="">
+            <h3 class="checkout-sep">1. Thông tin giỏ hàng</h3>
+            <small><strong></strong></small>
+            <div class="box-border">
+                <table class="table table-bordered table-responsive cart_summary" style="display: table;">
+                    <tbody>
+                        <tr style="background: #f7f7f7; font-weight: bold">
+                            <th>Ảnh</th>
+                            <th>Tên</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Tổng</th>
+                            <!-- <th class="action hidden-xs"></th> -->
+                        </tr>
+                        <!-- ngRepeat: (key, cart) in checkoutItem.carts -->
+                        <tr ng-repeat="item in vm.lstCart track by $index">
+                            <td class="cart_product">
+                                <a ui-sref="product-detail({name: item.title, nameCatalog: item.catalog, id: item.id})">
+                                    <img ng-src="{{item.imgUrl}}" alt="{{item.title}}">
+                                </a>
+                                <a class="cart-name" ui-sref="product-detail({name: item.title, nameCatalog: item.catalog, id: item.id})">{{item.title}}</a>
+                            </td>
+                            <td class="cart_description">
+                                <p class="product-name"><a ui-sref="product-detail({name: item.title, nameCatalog: item.catalog, id: item.id})" >{{item.title}}</a></p>
+                            </td>
+                            <td class="price">
+                                <span >{{item.price | number:0}} ₫</span>
+                            </td>
+                            <td class="qty">
+                                <input class="form-control input-sm"
+                                    type="number" min="1" ng-model="item.count" ng-change="vm.changeValueQty()">
+                                <!--<a class="btn btn-primary" ng-click="addToCart(cart.id, cart.qty, true)" style="padding: 5px 10px;">-->
+                                <!--    Cập nhật-->
+                                <!--</a>-->
+                            </td>
+                            <td class="price">
+                                <span >{{(item.price * item.count) | number:0}} ₫</span>
+                                <br>
+                                <a class="btn btn-danger" ng-click="vm.removeCart(item.id)" style="color:#fff">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
+                            <!--<td class="text-center hidden-xs">-->
+                            <!--    <a class="btn btn-danger" ng-click="removeCart(key)">-->
+                            <!--        <i class="fa fa-times"></i>-->
+                            <!--    </a>-->
+                            <!--</td>-->
+                        </tr><!-- end ngRepeat: (key, cart) in checkoutItem.carts -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4"><strong>Tổng cộng</strong></td>
+                            <td colspan="2"><strong >{{(vm.lstCart.length > 0 ? vm.totalAmount : 0) | number:0}} ₫</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <h3 class="checkout-sep">2. Thông tin giao hàng</h3>
+            <div class="box-border">
+                <ul>
+                    <li class="row">
+                        <div class="col-md-6">
+                            <label for="shipping_full_name" class="required">Họ và tên (*)</label>
+                            <input type="text" class="input form-control" name="shipping_full_name" ng-model="vm.account.shipping_full_name" id="shipping_full_name" required>
+                            <!-- <label class="control-label" ng-show="formCheckout.shipping_full_name.$error.required">
+                                Bạn chưa nhập tên
+                            </label> -->
+                        </div>
+                        <div class="col-md-6">
+                            <label for="shipping_phone" class="required">Số điện thoại (*)</label>
+                            <input type="text" class="input form-control" name="shipping_phone" ng-model="vm.account.billing.phone" id="shipping_phone" required>
+                            <!-- <label class="control-label" ng-show="submitted &amp;&amp; formCheckout.shipping_phone.$error.required">
+                                Bạn chưa nhập số điện thoại
+                            </label> -->
+                        </div>
+                    </li>
+                    <li class="row">
+                        <div class="col-md-6">
+                            <label for="shipping_address" class="required">Địa chỉ (*)</label>
+                            <input type="text" class="input form-control" ng-model="vm.account.billing.address_1">
+                            <!-- <label class="control-label" ng-show="submitted formCheckout.shipping_address.$error.required">
+                                Bạn chưa nhập địa chỉ
+                            </label> -->
+                        </div>
+                        <div class="col-md-6">
+                            <label for="note" class="required">Ghi chú</label>
+                            <textarea type="text" placeholder="Nếu có bất kì thắc mắc gì về thuốc hoặc thông tin giao hàng vui lòng nhập tại đây" class="input form-control" name="note" ng-model="vm.account.note" id="note"></textarea>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <h3 class="checkout-sep">3. Phương thức thanh toán</h3>
+            <div class="box-border">
+                <ul class="type_payment">
+                    <style type="text/css">
+                        .type_payment .cnt {
+                            display: none;
+                            margin-top: 5px;
+                            float: left;
+                            width: 100%;
+                            background: #efefef;
+                            padding: 15px;
+                            box-sizing: border-box;
+                            border-radius: 5px;
+                        }
+
+                        .checkout-page .box-border label {
+                            margin-top: 10px;
+                        }
+                    </style>
+
+                    <li>
+                        <label for="radio_button_6">
+                            <input type="radio" name="payment_method" id="radio_button_6">
+                            Chuyển khoản qua tài khoản ngân hàng
+                        </label>
+                        <div class="cnt cnt_tab" id="show_tab4" style="display: block;">
+                            <p>Quý khách có thể chuyển tiền thanh toán tới một trong các tài khoản sau:</p>
+
+                            <p>
+                                - Ngân hàng <strong>BIDV</strong>
+                                - Chi nhánh Thanh Xuân - Số tài khoản: <strong class="red">22210000583599 Dương Minh
+                                    Khoa</strong>
+                            </p>
+
+                            <p>
+                                - Ngân hàng <strong>Agribank</strong>
+                                - Chi nhánh Trung Yên - Số tài khoản: <strong class="red">1302205180685 Nguyễn Thị Hằng</strong>
+                            </p>
+
+                            <p>
+                                - Ngân hàng <strong>Vietcombank</strong>
+                                - Chi nhánh Ba Đình - Số tài khoản: <strong class="red">0611001896638 Nghiêm Thị Thanh
+                                    Thủy</strong>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="container">
+                <button class="btn btn-success pull-right" ng-click="vm.checkOut()" ng-disabled="formCheckout.$invalid || vm.totalAmount == 0 || !vm.account.id">
+                    <span>Tiếp tục</span>
+                </button>
+                <a ui-sref="home" class="btn btn-success pull-right" style="margin-right: 30px;">Thêm sản phẩm</a>
+            </div>
+        </form>
+    </div>
+</div>

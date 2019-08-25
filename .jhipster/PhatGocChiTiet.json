@@ -1,0 +1,73 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "giaiDau",
+            "otherEntityName": "giaiDau",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "uploadVersion",
+            "otherEntityName": "uploadVersion",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "tieuDe",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "data1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "data2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "data3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "data4",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "data5",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "data6",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "data7",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "data8",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180122050259",
+    "entityTableName": "phat_goc_chi_tiet",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

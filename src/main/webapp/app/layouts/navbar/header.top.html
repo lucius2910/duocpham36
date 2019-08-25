@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="top-bar-social">
+                <div class="top-bar-logo">
+                    <a ui-sref="home">
+                        <img alt="Nhà thuốc Thanh Hà" src="{{API_CONFIG.IMG_URL + 'logo-tet.jpg'}}" style="height: 36px;">
+                    </a>
+                </div>
+                <div class="top-bar-social-group">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                </div>
+            </div>
+            <div class="support-link">
+                <a href="#" ng-click="vm.toggleAlert(true)">Giới thiệu</a>
+
+                <button class="btn btn-success btn-menu-bar" ng-click="vm.openMenuMbl()">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- <div class="col-12 col-sm-6 col-md-5 col-lg-4 logo logo-mobile">
+            <a ui-sref="home" style="margin: 0; padding: 0">
+                <img alt="Nhà thuốc Thanh Hà" src="{{API_CONFIG.IMG_URL + 'logo-tet.jpg'}}"
+                    style="background-color: #fff;    padding: 5px 0 5px 0;margin-top: 0;">
+            </a>
+        </div> -->
+    </div>
+</div>

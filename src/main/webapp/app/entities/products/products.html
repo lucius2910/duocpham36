@@ -1,0 +1,102 @@
+<div class="container" id="columns">
+    <div class="row">
+
+        <div class="column col-xs-12 col-sm-3" id="left_column">
+            <!-- block category -->
+            <div class="block left-module">
+                <p class="title_block">Danh mục</p>
+                <div class="block_content">
+                    <!-- layered -->
+                    <div class="layered layered-category">
+                        <div class="layered-content">
+                            <ul class="sub-category-list tree-menu">
+                                <li ng-repeat="item in vm.lstCategory"><span></span><a href="javascript:void(0)" ng-click="vm.gotocatalog(item)"
+                                        style="text-transform: uppercase" ng-click="vm.click()">{{item.name}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- ./layered -->
+                </div>
+            </div>
+            <!-- ./block category  -->
+        </div>
+
+
+
+        <div class="center_column col-xs-12 col-sm-9" id="center_column">
+
+            <div id="view-product-list" class="view-product-list">
+                <h2 class="page-heading">
+                    <span class="page-heading-title" style="text-transform: capitalize;">{{vm.nameCatalog}}</span>
+                </h2>
+                <!-- PRODUCT LIST -->
+                <ul class="row product-list grid">
+                    <li class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 product"
+                        ng-repeat="item in vm.lstProc track by $index">
+                        <div class="container-product">
+                            <div class="left-block">
+                                <a ui-sref="product-detail({name: item.title, nameCatalog: item.catalog, id: item.id})">
+                                    <img class="img-responsive" alt="product" ng-src="{{item.imgUrl}}">
+                                </a>
+                                <div class="is-choose" ng-if="item.isChoose">
+                                    Đã chọn
+                                </div>
+                                <div class="is-change" ng-if="item.is">
+                                    <a title="Biến động giá" href="javascript:void(0)">
+                                        <i class="fa fa-line-chart" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="add-to-cart">
+                                    <div class="add-num-proc">
+                                        <p class="input-group">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default btn-customs"
+                                                    ng-click="vm.minusNumProc(item.id)">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                            </span>
+                                            <input type="text" class="form-control add-num" ng-model="item.count" />
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default btn-customs"
+                                                    ng-click="vm.addNumProc(item.id)">
+                                                    <i class="fa fa-plus"></i>
+                                                </button>
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <a title="Add to Cart" href="javascript:void(0)"
+                                            ng-click="vm.addToCart(item)"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right-block">
+                                <h5 class="product-name"><a
+                                        ui-sref="product-detail({name: item.title, nameCatalog: item.catalog, id: item.id})">{{item.title}}</a>
+                                </h5>
+                                <div class="content_price">
+                                    <span ng-if="!item.oldPrice" class="price product-price">{{item.price | number:0}}
+                                        ₫</span>
+                                    <span ng-if="item.oldPrice"
+                                        class="price product-price price-hot">{{item.price | number:0}} ₫</span>
+                                    <span ng-if="item.oldPrice" class="price old-price">{{item.oldPrice | number:0}}
+                                        ₫</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- ./PRODUCT LIST -->
+            </div>
+            <!-- ./view-product-list-->
+            <div class="sortPagiBar">
+                <div class="bottom-pagination">
+                    <nav>
+                        <ul uib-pagination total-items="vm.paging.totalItem" ng-change="vm.loadProducts()" items-per-page="12" ng-model="vm.paging.page" max-size="vm.paging.maxSize" class="pagination-sm" boundary-link-numbers="true" rotate="false"></ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

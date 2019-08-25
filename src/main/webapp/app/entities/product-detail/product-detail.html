@@ -1,0 +1,194 @@
+<div class="container detail" id="columns">
+    <div class="row">
+        <div class="column col-xs-12 col-sm-3" id="left_column">
+            <!-- block category -->
+            <div class="block left-module">
+                <p class="title_block">Danh mục</p>
+                <div class="block_content">
+                    <!-- layered -->
+                    <div class="layered layered-category">
+                        <div class="layered-content">
+                            <ul class="sub-category-list tree-menu">
+                                <li ng-repeat="item in vm.lstCategory"><span></span><a ng-click="vm.gotocatalog(item)" href="javascript:void(0)" style="text-transform: uppercase">{{item.name}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- ./layered -->
+                </div>
+            </div>
+            <!-- ./block category  -->
+        </div>
+
+
+
+        <div class="center_column col-xs-12 col-sm-9" id="center_column">
+            <!-- Product -->
+            <div id="product">
+                <div class="primary-box row">
+                    <div class="pb-left-column col-xs-12 col-sm-6">
+                        <!-- product-imge-->
+                        <div class="product-image">
+                            <div class="product-full">
+                                <img id="" ng-src="{{vm.productInfo.imgUrl}}"
+                                    data-zoom-image="{{vm.productInfo.imgUrl}}">
+                            </div>
+                        </div>
+                        <!-- product-imge-->
+                    </div>
+                    <div class="pb-right-column col-xs-12 col-sm-6">
+                        <h1 class="product-name" style="text-transform: capitalize;">{{vm.productInfo.title}}</h1>
+                        <div class="product-price-group">
+                            <span class="price">{{vm.productInfo.price | number:0}} ₫</span>
+                            <span class="old-price">{{vm.productInfo.priceOld | number:0}} ₫</span>
+                            <span class="discount">{{vm.productInfo.discount | number:2}}%</span>
+                            <i class="fluctuation fa fa-line-chart" aria-hidden="true"></i>
+                        </div>
+                        <div class="info-orther">
+                            <p>Xuất sứ: <span class="in-stock">{{vm.productInfo.from}}</span></p>
+                        </div>
+                        <div class="product-desc"></div>
+                        <div class="form-option">
+                            <p class="form-option-title">Lựa chọn:</p>
+                            <div class="attributes">
+                                <div class="attribute-label">Số lượng:</div>
+                                <button class="btn btn-default ng-hide" ng-show="vm.productInfo.count > 1"
+                                    style="float: left; border-radius: inherit; background-color: #5bb85b;"
+                                    ng-click="vm.productInfo.count = vm.productInfo.count - 1">
+                                    <i class="fa fa-minus fa-4"></i>
+                                </button>
+                                <button class="btn btn-default" ng-show="vm.productInfo.count <= 1" disabled=""
+                                    style="float: left; border-radius: inherit; background-color: #5bb85b;"
+                                    ng-click="vm.productInfo.count = vm.productInfo.count - 1">
+                                    <i class="fa fa-minus fa-4"></i>
+                                </button>
+                                <input id="option-product-qty" type="number" min="1" ng-model="vm.productInfo.count"
+                                    ng-change="changeValueQty(5, vm.productInfo.count)" style=" border: 1px solid #ccc;"
+                                    class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min">
+                                <button class="btn btn-default" ng-show="vm.productInfo.count < 100"
+                                    style="float: left; border-radius: inherit; background-color: #5bb85b;"
+                                    ng-click="vm.productInfo.count = vm.productInfo.count + 1">
+                                    <i class="fa fa-plus fa-1"></i>
+                                </button>
+                                <button class="btn btn-default ng-hide" ng-show="vm.productInfo.count >= 100"
+                                    style="float: left; border-radius: inherit;background-color: #5bb85b;" disabled="">
+                                    <i class="fa fa-plus fa-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-action">
+                            <div class="button-group">
+                                <a class="btn-add-cart" href="javascript:void(0)"
+                                    ng-click="vm.addToCart(vm.productInfo)">Thêm vào giỏ hàng</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- tab product -->
+                <div class="product-tab">
+                    <ul class="nav-tab">
+                        <li class="active">
+                            <a aria-expanded="false" data-toggle="tab" href="#product-detail">Chi tiết sản phẩm</a>
+                        </li>
+                    </ul>
+                    <div class="tab-container">
+                        <div id="product-detail" class="tab-panel active" ng-bind-html="vm.productInfo.content">
+                        </div>
+                    </div>
+                </div>
+                <!-- ./tab product -->
+                <!-- box product -->
+                <div class="page-product-box">
+
+                    <h3 class="heading">Sản phẩm liên quan</h3>
+                    <ul class="owl-carousel owl-carousel1 owl-theme product-list">
+                        <li class="product" ng-repeat="item in vm.lstProductLike">
+                            <div class="container-product">
+                                <div class="left-block">
+                                    <a ui-sref="product-detail({name: item.title, nameCatalog: item.catalog})">
+                                        <img class="img-responsive" alt="product" ng-src="{{item.imgUrl}}">
+                                    </a>
+                                    <div class="is-choose" ng-if="item.isChoose">
+                                        Đã chọn
+                                    </div>
+                                    <div class="is-change" ng-if="item.is">
+                                        <a title="Biến động giá" href="javascript:void(0)">
+                                            <i class="fa fa-line-chart" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <div class="add-num-proc">
+                                            <p class="input-group">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default btn-customs"
+                                                        ng-click="vm.minusNumProc(item.id)">
+                                                        <i class="fa fa-minus"
+                                                            style="color: #2faf64;margin-top: 2px;"></i>
+                                                    </button>
+                                                </span>
+                                                <input type="text" class="form-control add-num" ng-model="item.count" />
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default btn-customs"
+                                                        ng-click="vm.addNumProc(item.id)">
+                                                        <i class="fa fa-plus"
+                                                            style="color: #2faf64;margin-top: 2px;"></i>
+                                                    </button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <a title="Add to Cart" href="javascript:void(0)"
+                                                ng-click="vm.addToCart(item)"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right-block">
+                                    <h5 class="product-name"><a
+                                            ui-sref="product-detail({name: item.title, nameCatalog: item.catalog})">{{item.title}}</a>
+                                    </h5>
+                                    <div class="content_price">
+                                        <span ng-if="!item.oldPrice"
+                                            class="price product-price">{{item.price | number:0}} ₫</span>
+                                        <span ng-if="item.oldPrice"
+                                            class="price product-price price-hot">{{item.price | number:0}} ₫</span>
+                                        <span ng-if="item.oldPrice" class="price old-price">{{item.oldPrice | number:0}}
+                                            ₫</span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- ./box product -->
+            </div>
+            <!-- Product -->
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        setTimeout(function(){
+            var initWidth = $(window).width();
+            var slideItem = 4;
+
+            if (initWidth <= 480) {
+                slideItem = 2;
+            } else if (initWidth > 480 && initWidth <= 768) {
+                slideItem = 3;
+            }
+
+            $('.owl-carousel1').owlCarousel({
+                items: slideItem,
+                dots: false,
+                nav: true,
+                loop: true,
+                mouseDrag: true,
+                autoPlay: true,
+                lazyLoad: true,
+                margin: 10
+            });
+        },1000);
+    });
+</script>

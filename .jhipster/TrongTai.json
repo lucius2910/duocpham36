@@ -1,0 +1,65 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "giaiDau",
+            "otherEntityName": "giaiDau",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "uploadVersion",
+            "otherEntityName": "uploadVersion",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "tieuDe",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stt",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "trongTai",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soTran",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tongSoTheVang",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tbThevangTheoTran",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "tongsoThedo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tbThedoTheoTran",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "pen",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "loi",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20180122050254",
+    "entityTableName": "trong_tai",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

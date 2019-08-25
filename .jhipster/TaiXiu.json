@@ -1,0 +1,49 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "giaiDau",
+            "otherEntityName": "giaiDau",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "uploadVersion",
+            "otherEntityName": "uploadVersion",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "tieuDe",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stt",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "doiBong",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tongSoTran",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "soTranXiu",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "soTranTai",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180122050252",
+    "entityTableName": "tai_xiu",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

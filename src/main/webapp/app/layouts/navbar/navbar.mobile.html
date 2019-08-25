@@ -1,0 +1,45 @@
+<ul>
+        <li>
+                <a ui-sref="home">ĐẶT HÀNG</a>
+        </li>
+        <li>
+                <a href="javascript:void(0)" class="dropdown-toggle">SẢN PHẨM</a>
+        </li>
+        <li class="child" ng-repeat="item in vm.lstCategory">
+                <a ng-click="vm.gotocatalog(item)" href="javascript:void(0)"
+                        style="text-transform: uppercase">{{item.name}}</a>
+        </li>
+        <li>
+                <a href="javascript:void(0)" class="dropdown-toggle">HƯỚNG DẪN ĐẶT HÀNG</a>
+        </li>
+
+        <li class="child"><a ui-sref="uncategory({name: 'Hướng dẫn đăng ký tài khoản'})">HƯỚNG
+                        DẪN ĐĂNG KÝ TÀI KHOẢN</a></li>
+        <li class="child"><a ui-sref="uncategory({name: 'Hướng dẫn đặt hàng'})">HƯỚNG
+                        DẪN ĐẶT HÀNG</a></li>
+        <li class="child"><a ui-sref="uncategory({name: 'Hướng dẫn thanh toán bằng chuyển khoản'})">HƯỚNG
+                        DẪN THANH TOÁN BẰNG CHUYỂN KHOẢN</a></li>
+        <li>
+                <a href="javascript:void(0)" class="dropdown-toggle">CHÍNH SÁCH</a>
+        </li>
+
+        <li class="child"><a ui-sref="uncategory({name: 'Chính sách khuyến mại'})">CHÍNH
+                        SÁCH KHUYẾN MẠI</a></li>
+        <li class="child"><a ui-sref="uncategory({name: 'Chính sách đổi trả hàng'})">CHÍNH
+                        SÁCH ĐỔI TRẢ HÀNG</a></li>
+        <li class="child"><a ui-sref="uncategory({name: 'Chính sách giao hàng'})">CHÍNH
+                        SÁCH GIAO HÀNG</a></li>
+        <li class="child"><a ui-sref="uncategory({name: 'Tuyến xe giao hàng'})">TUYẾN
+                        XE GIAO HÀNG</a></li>
+        <li>
+                <a ui-sref="settings({nameCatalog : 'Tài khoản'})">ĐƠN HÀNG ĐÃ ĐẶT</a>
+        </li>
+        <li>
+                <a href="javascript:void(0)" class="dropdown-toggle">TIN TỨC</a>
+        </li>
+
+        <li class="child"><a ui-sref="tin-tuc({nameCatalog: 'Sức khỏe'})">SỨC
+                        KHỎE</a></li>
+        <li class="child"><a ui-sref="tin-tuc({nameCatalog: 'Thực phẩn chức năng'})">THỰC
+                        PHẨM CHỨC NĂNG</a></li>
+</ul>

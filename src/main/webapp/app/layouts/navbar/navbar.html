@@ -1,0 +1,256 @@
+<div id="header" class="header">
+
+    <!--/.top-header -->
+    <!-- MAIN HEADER -->
+    <div class="container main-header">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-5 col-lg-4 logo">
+                <a ui-sref="home">
+                    <img alt="Nhà thuốc Thanh Hà" src="{{API_CONFIG.IMG_URL + 'logo-tet.jpg'}}" style="height: 163px;position: absolute;top:-20px">
+                    <div class="clearfix">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-7 col-lg-6 offset-lg-2 group-button-header show-desktop">
+                <div class="row justify-content-end">
+                    <div class="col-10 col-md-8 col-lg-7 ">
+                        <a class="btn btn-success" ng-click="vm.login()" style="color: #fff"
+                            ng-if="!vm.account.id">Đăng
+                            nhập</a>
+                        <a ui-sref="register" class="log-in" ng-if="!vm.account.id">Đăng kí tài khoản</a>
+
+                        <div class="login-info" ng-if="vm.account.id">
+                            <h4 class="user-name">Xin chào, {{vm.account.first_name + ' ' + vm.account.last_name}}
+                            </h4>
+                            <a href="javascript:void(0)" class="log-out" ng-click="vm.logout()">Đăng xuất</a>
+                            <a ui-sref="settings({nameCatalog : 'Tài khoản'})" class="btn btn-success">Lịch sử đặt
+                                hàng</a>
+                        </div>
+                    </div>
+
+                    <!-- <div class="btn-cart col-12 col-md-2 col-lg-2" id="cart-block">
+                                <a title="Giỏ hàng" ui-sref="thanh-toan({nameCatalog : 'Thanh toán'})"></a>
+                                <span class="notify notify-right">{{vm.lstCart.length ? vm.lstCart.length : 0 }}</span>
+                                <div class="cart-block">
+                                    <div class="cart-block-content">
+                                        <h5 class="cart-title ng-binding">Có {{vm.lstCart.length ? vm.lstCart.length : 0 }} sản
+                                            phẩm</h5>
+                                        <div class="cart-block-list">
+                                            <ul>
+                                                <li class="product-info ng-scope" ng-repeat="item in vm.lstCart track by $index">
+                                                    <div class="p-left">
+                                                        <a href="javascript:void(0)" ng-click="vm.removeCart(item.id)" class="remove_link">
+                                                            <i class="glyphicon glyphicon-remove"></i>
+                                                        </a>
+                                                        <a href="{{item.link}}">
+                                                            <img class="img-responsive" ng-src="{{item.imgUrl}}">
+                                                        </a>
+                                                    </div>
+                                                    <div class="p-right">
+                                                        <p class="p-name ng-binding">{{item.title}}</p>
+                                                        <p class="p-rice ng-binding">{{item.price | number:0}} ₫</p>
+                                                        <p class="ng-binding">SL: {{item.count}}</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="toal-cart">
+                                            <span>Tổng</span>
+                                            <span class="toal-price pull-right ng-binding">{{vm.totalAmount | number:0}} ₫</span>
+                                        </div>
+                                        <div class="cart-buttons">
+                                            <button class="btn btn-success" ng-disabled="vm.lstCart.length == 0" ng-click="vm.thanhToan()">
+                                                <span>Thanh toán</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                </div>
+            </div>
+
+            <div class="col-12 header-phone show-desktop">
+                <div class="row phone justify-content-end">
+                    <div class="col-md-6 col-lg-3 phone-group">
+                        <p class="phone__title">Hỗ trợ mở tài khoản và khách hàng mới</p>
+                        <a class="phone-number"> 02376.666.662 </a>
+                    </div>
+                    <div class="col-md-3 col-lg-2 phone-group">
+                        <p class="phone__title">Hỗ trợ đơn hàng</p>
+                        <a class="phone-number"> 02376.666.675 </a>
+                    </div>
+                    <div class="col-md-3 col-lg-2 phone-group">
+                        <p class="phone__title">Khiếu nại dịch vụ</p>
+                        <a class="phone-number"> 0931.355.585 </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="show-mobile" style="padding: 0 15px;">
+
+                <a class="btn btn-success" ng-click="vm.login()" style="color: #fff" ng-if="!vm.account.id">Đăng
+                    nhập</a>
+                <a ui-sref="register" class="log-in" ng-if="!vm.account.id">Đăng kí tài khoản</a>
+
+                <div class="login-info" ng-if="vm.account.id">
+                    <h4 class="user-name">Xin chào, {{vm.account.first_name + ' ' + vm.account.last_name}}
+                    </h4>
+                    <a href="javascript:void(0)" class="log-out" ng-click="vm.logout()">Đăng xuất</a>
+                    <a ui-sref="settings({nameCatalog : 'Tài khoản'})" class="btn btn-success">Lịch sử đặt
+                        hàng</a>
+                </div>
+
+                <div class="header-phone">
+                    <div class="row phone justify-content-end">
+                        <div class="col-12 phone-group">
+                            <p class="phone__title">Hỗ trợ mở tài khoản và khách hàng mới</p>
+                            <a class="phone-number"> 02376.666.662 </a>
+                        </div>
+                        <div class="col-6 phone-group">
+                            <p class="phone__title">Hỗ trợ đơn hàng</p>
+                            <a class="phone-number"> 02376.666.675 </a>
+                        </div>
+                        <div class="col-6 phone-group">
+                            <p class="phone__title">Khiếu nại dịch vụ</p>
+                            <a class="phone-number"> 0931.355.585 </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MANIN HEADER -->
+    <div id="nav-top-menu" class="nav-top-menu">
+        <div class="container">
+            <div class="row">
+                <div id="main-menu" class="col-md-12 main-menu">
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <div id="navbar" class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                    <li>
+                                        <a ui-sref="home">ĐẶT HÀNG</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0)" class="dropdown-toggle">SẢN PHẨM</a>
+                                        <ul class="dropdown-menu container-fluid" style="padding: 5px 10px">
+                                            <li class="block-container">
+                                                <ul class="block">
+                                                    <li class="link_container" ng-repeat="item in vm.lstCategory">
+                                                        <a ng-click="vm.gotocatalog(item)" href="javascript:void(0)"
+                                                            style="text-transform: uppercase">{{item.name}}</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0)" class="dropdown-toggle">HƯỚNG DẪN ĐẶT HÀNG</a>
+                                        <ul class="dropdown-menu container-fluid" style="padding: 5px 10px">
+                                            <li class="block-container">
+                                                <ul class="block">
+                                                    <li class="link_container"><a
+                                                            ui-sref="uncategory({name: 'Hướng dẫn đăng ký tài khoản'})">HƯỚNG
+                                                            DẪN ĐĂNG KÝ TÀI KHOẢN</a></li>
+                                                    <li class="link_container"><a
+                                                            ui-sref="uncategory({name: 'Hướng dẫn đặt hàng'})">HƯỚNG
+                                                            DẪN ĐẶT HÀNG</a></li>
+                                                    <li class="link_container"><a
+                                                            ui-sref="uncategory({name: 'Hướng dẫn thanh toán bằng chuyển khoản'})">HƯỚNG
+                                                            DẪN THANH TOÁN BẰNG CHUYỂN KHOẢN</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0)" class="dropdown-toggle">CHÍNH SÁCH</a>
+                                        <ul class="dropdown-menu container-fluid" style="padding: 5px 10px">
+                                            <li class="block-container">
+                                                <ul class="block">
+                                                    <li class="link_container"><a
+                                                            ui-sref="uncategory({name: 'Chính sách khuyến mại'})">CHÍNH
+                                                            SÁCH KHUYẾN MẠI</a></li>
+                                                    <li class="link_container"><a
+                                                            ui-sref="uncategory({name: 'Chính sách đổi trả hàng'})">CHÍNH
+                                                            SÁCH ĐỔI TRẢ HÀNG</a></li>
+                                                    <li class="link_container"><a
+                                                            ui-sref="uncategory({name: 'Chính sách giao hàng'})">CHÍNH
+                                                            SÁCH GIAO HÀNG</a></li>
+                                                    <li class="link_container"><a
+                                                            ui-sref="uncategory({name: 'Tuyến xe giao hàng'})">TUYẾN
+                                                            XE GIAO HÀNG</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a ui-sref="settings({nameCatalog : 'Tài khoản'})">ĐƠN HÀNG ĐÃ ĐẶT</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0)" class="dropdown-toggle">TIN TỨC</a>
+                                        <ul class="dropdown-menu container-fluid" style="padding: 5px 10px">
+                                            <li class="block-container">
+                                                <ul class="block">
+                                                    <li class="link_container"><a
+                                                            ui-sref="tin-tuc({nameCatalog: 'Sức khỏe'})">SỨC
+                                                            KHỎE</a></li>
+                                                    <li class="link_container"><a
+                                                            ui-sref="tin-tuc({nameCatalog: 'Thực phẩn chức năng'})">THỰC
+                                                            PHẨM CHỨC NĂNG</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--/.nav-collapse -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!-- CART ICON ON MMENU -->
+            <!-- <div id="shopping-cart-box-ontop" style="width: 70px; display: none; padding: 10px;">
+                <img src="/content/images/icon-cart-option2.png" alt="cart">
+                <div class="shopping-cart-box-ontop-content"></div>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="container" ng-if="vm.iShowBreakcum">
+        <div class="row breadcrumb clearfix">
+            <a class="home" ui-sref="home">Trang chủ</a>
+            <span class="navigation-pipe">&nbsp;</span>
+            <a ng-if="vm.currentState != 'bai-viet'" ui-sref="products({nameCatalog: vm.products})">{{vm.products}}</a>
+            <a ng-if="vm.currentState == 'bai-viet'" ui-sref="tin-tuc({nameCatalog: vm.products})">{{vm.products}}</a>
+            <span class="navigation-pipe" ng-if="vm.productName != null">&nbsp;</span>
+            <span>{{vm.productName}}</span>
+        </div>
+    </div>
+</div>
+
+
+<div class="group-alert">
+    <div ng-repeat="item in vm.lstAlert" class="popup-alert popup-alert-show {{'item-alert-' + item.id}}">
+        <button ng-click="vm.removeAlert(item.id)">
+            <i class="fa fa-close"></i>
+        </button>
+
+        <p class="title">Thông báo:</p>
+        <p class="p_content">{{item.content}}</p>
+    </div>
+</div>
+
+<button class="btn btn-success btn-fixed btn-fixed-left" ng-click="vm.backSearch()" style="height: 45px">
+    <i class="fa fa-search"></i>
+    Tìm kiếm
+</button>
+
+<button class="btn btn-success btn-fixed btn-fixed-right" ng-click="vm.backCart()"
+    style="height:45px;display: flex; align-items: center;">
+    <img src="{{API_CONFIG.IMG_URL + 'icon-cart-option2.png'}}" alt="" class="fixed_cart_icon"
+        style="margin-right:5px;">
+    <span>Giỏ hàng ({{vm.lstCart.length ? vm.lstCart.length : 0}})</span>
+</button>

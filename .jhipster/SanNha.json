@@ -1,0 +1,69 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "giaiDau",
+            "otherEntityName": "giaiDau",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "uploadVersion",
+            "otherEntityName": "uploadVersion",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "tieuDe",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "xepHang",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "doiBong",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "soTran",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "thang",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "hoa",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "thua",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "soBanThang",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "soBanThua",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "heSo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "diem",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180122050249",
+    "entityTableName": "san_nha",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

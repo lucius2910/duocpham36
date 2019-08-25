@@ -1,0 +1,65 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "giaiDau",
+            "otherEntityName": "giaiDau",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "uploadVersion",
+            "otherEntityName": "uploadVersion",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "tieuDe",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stt",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tendoi",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sotran",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "cuatren",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "thangkeo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "hoa",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "thuakeo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "heso",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tyleThangkeo",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180122050255",
+    "entityTableName": "ty_le_keo",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

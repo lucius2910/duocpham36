@@ -1,0 +1,84 @@
+<div class="page-content">
+    <div class="row">
+        <div class="container account-info">
+            <h3 class="checkout-sep">Thông tin tài khoản </h3>
+            <form action="" id="form-account" name="formAccount" novalidate="" class="ng-pristine ng-valid ng-valid-required">
+                <div class="form-group" >
+                    <label>Họ tên <small>(*)</small></label>
+                    <input type="text" name="full_name" class="form-control" ng-model="vm.settingsAccount.fullname" required>
+                </div>
+                <div class="form-group" >
+                    <label>Tên nhà thuốc <small>(*)</small></label>
+                    <input type="text" name="name_of_drugstore" class="form-control" ng-model="vm.settingsAccount.company" required>
+                </div>
+                <div class="form-group">
+                    <label>Email <small>(*)</small></label>
+                    <input type="text" name="email" class="form-control" ng-model="vm.settingsAccount.email" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Số điện thoại</label>
+                    <input type="text" name="phone" class="form-control" ng-model="vm.settingsAccount.phone">
+                </div>
+
+                <div class="form-group">
+                    <label>Địa chỉ</label>
+                    <input type="text" name="address" class="form-control" ng-model="vm.settingsAccount.address">
+                </div>
+
+                <!-- ngRepeat: error in errors -->
+                <div class="clearfix"></div>
+            </form>
+
+            <div class="page-content checkout-page">
+                <form method="POST" accept-charset="UTF-8" name="formCheckout" class="ng-pristine ng-valid">
+                    <h3 class="checkout-sep">Chi tiết đơn hàng</h3>
+                    <div class="box-border">
+                        <table class="table table-bordered table-responsive cart_summary" style="display: table">
+                            <thead>
+                                <tr>
+                                    <!-- <th class="cart_product">Ảnh</th> -->
+                                    <th class="cart_description">Tên</th>
+                                    <th>Giá</th>
+                                    <th>Số lượng</th>
+                                    <th class="text-center">Tổng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- ngRepeat: order in orders -->
+                                <tr ng-repeat="product in vm.lstProduct">
+                                    <!-- <td class="cart_product">
+                                        <a href="">
+                                            <img ng-src="{{product.imgUrl}}">
+                                        </a>
+
+                                    </td> -->
+                                    <td class="cart_description">
+                                        <p class="product-name"><a ui-sref="product-detail({name: product.title, nameCatalog: product.catalog, id: product.product_id})">{{product.name}}</a></p>
+                                    </td>
+                                    <td class="price">
+                                        <span>{{product.price | number:0}} ₫</span>
+                                    </td>
+                                    <td class="qty">
+                                        <span>{{product.quantity}}</span>
+                                    </td>
+                                    <td class="price">
+                                        <span>{{product.total | number:0}} ₫</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3"><strong>Tổng cộng</strong></td>
+                                    <td colspan="1"><strong>{{vm.totalAmount | number:0}} ₫</strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </form>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>

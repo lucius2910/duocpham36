@@ -1,0 +1,70 @@
+<div class="container" id="columns">
+    <div class="row">
+
+        <div class="column col-xs-12 col-sm-3" id="left_column">
+            <!-- block category -->
+            <div class="block left-module">
+                <p class="title_block">Danh mục</p>
+                <div class="block_content">
+                    <!-- layered -->
+                    <div class="layered layered-category">
+                        <div class="layered-content">
+                            <ul class="sub-category-list tree-menu">
+                                <li><span></span><a ui-sref="tin-tuc({nameCatalog: 'Sức khỏe'})">Sức khỏe</a></li>
+                                <li><span></span><a ui-sref="tin-tuc({nameCatalog: 'Thực phẩm chức năng'})">Thực phẩm chức
+                                        năng</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- ./layered -->
+                </div>
+            </div>
+            <!-- ./block category  -->
+        </div>
+
+
+
+        <div class="center_column col-xs-12 col-sm-9" id="center_column">
+
+            <div id="view-product-list" class="view-product-list">
+                <h2 class="page-heading">
+                    <span class="page-heading-title">{{vm.pageTitle | uppercase}}</span>
+                </h2>
+
+                <ul class="blog-posts">
+                    <li class="post-item" ng-repeat="item in vm.lstPost">
+                        <article class="entry">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="entry-thumb image-hover2">
+                                        <a ui-sref="bai-viet({name: item.title, nameCatalog: item.catalog, id: item.id})">
+                                            <img ng-src="{{item.img_url}}" alt="blog-full.jpg" style="height: 150px;">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="entry-ci">
+                                        <h3 class="entry-title"><a ui-sref="bai-viet({name: item.title, nameCatalog: item.catalog, id: item.id})">{{item.title}}</a></h3>
+                                        <div class="entry-meta-data">
+                                            <span class="author"> <i class="fa fa-user"></i> Tác giả: {{item.user}}</span>
+                                            <span class="cat"><i class="fa fa-folder-o"></i> Chuyên mục: {{item.catalog}}</span>
+                                            <span class="date">
+                                                <i class="fa fa-calendar">
+                                                </i> {{item.date}}
+                                            </span>
+                                        </div>
+                                        <div class="entry-excerpt">{{item.des}}</div>
+                                        <div class="entry-more">
+                                            <a ui-sref="bai-viet({name: item.title, nameCatalog: item.catalog, id: item.id})">Xem thêm</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "giaiDau",
+            "otherEntityName": "giaiDau",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "uploadVersion",
+            "otherEntityName": "uploadVersion",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "tieuDe",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tbThevangDb",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "tbThevangDt",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "tongsoTheDo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tbThedoTheoTran",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "tbThedoCuaDb",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "tbThedoCuaDt",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20180122050253",
+    "entityTableName": "the_phat",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

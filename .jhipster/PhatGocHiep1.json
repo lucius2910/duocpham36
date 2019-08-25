@@ -1,0 +1,69 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "giaiDau",
+            "otherEntityName": "giaiDau",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "uploadVersion",
+            "otherEntityName": "uploadVersion",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "tieuDe",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stt",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "doibong",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sotran",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "thang",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "hoa",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "thua",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tongso",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tbDoibong",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "tbDoithu",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "tbMuagiai",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20180122050257",
+    "entityTableName": "phat_goc_hiep_1",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

@@ -1,0 +1,66 @@
+<div class="container" id="columns">
+    <div class="row">
+
+        <div class="column col-xs-12 col-sm-3" id="left_column">
+            <!-- block category -->
+            <div class="block left-module">
+                <p class="title_block">Danh mục</p>
+                <div class="block_content">
+                    <!-- layered -->
+                    <div class="layered layered-category">
+                        <div class="layered-content">
+                            <ul class="sub-category-list tree-menu">
+                                <li><span></span><a ui-sref="tin-tuc({nameCatalog: 'Sức khỏe'})">Sức khỏe</a></li>
+                                <li><span></span><a ui-sref="tin-tuc({nameCatalog: 'Thực phẩm chức năng'})">Thực phẩm chức năng</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- ./layered -->
+                </div>
+            </div>
+            <!-- ./block category  -->
+        </div>
+
+
+
+        <div class="center_column col-xs-12 col-sm-9" id="center_column">
+
+            <div id="view-product-list" class="view-product-list">
+                <h2 class="page-heading">
+                    <span class="page-heading-title">{{vm.pageTitle | uppercase}}</span>
+                </h2>
+
+                <article class="entry-detail">
+                    <div class="entry-meta-data">
+                        <span class="author"> <i class="fa fa-user"></i> Tác giả: Admin</span>
+                        <span class="cat"><i class="fa fa-folder-o"></i> Chuyên mục: Tin tức</span>
+                        <span class="date">
+                            <i class="fa fa-calendar">
+                            </i> 29 Tháng 7, 2018
+                        </span>
+                    </div>
+
+
+                    <!-- <div class="entry-photo">
+                        <img src="/storage/blog-full.jpg" alt="blog-full.jpg">
+                    </div> -->
+
+
+                    <div class="content-text clearfix">
+                        <p ng-bind-html="vm.postContent"></p>
+                    </div>
+
+
+                    <i class="fa fa-tags" style="float:left; transform:rotate(90deg)"></i>
+                    <div class="entry-tags" style="float:left; line-height: 15px; margin-left: 5px;">
+                        <span style="font-weight: bold;">Từ khóa:</span>
+                        <a ui-sref="tu-khoa({nameCatalog: 'Sức khỏe'})">Sức khỏe, </a>
+                        <a ui-sref="tu-khoa({nameCatalog: 'Đời sống'})">Đời sống, </a>
+                        <a ui-sref="tu-khoa({nameCatalog: 'Trà'})">Trà</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="container" id="columns">
+    <div class="row">
+
+        <div class="column col-xs-12 col-sm-3" id="left_column">
+            <!-- block category -->
+            <div class="block left-module">
+                <p class="title_block">Danh mục</p>
+                <div class="block_content">
+                    <!-- layered -->
+                    <div class="layered layered-category">
+                        <div class="layered-content">
+                            <ul class="sub-category-list tree-menu">
+                                <li><span></span><a ui-sref="products({nameCatalog: 'Thuốc'})">Thuốc</a></li>
+                                <li><span></span><a ui-sref="products({nameCatalog: 'Thiết bị y tế'})">Thiết bị y tế</a></li>
+                                <li><span></span><a ui-sref="products({nameCatalog: 'Dược mỹ phẩm'})">Dược Mỹ phẩm</a></li>
+                                <li><span></span><a ui-sref="products({nameCatalog: 'Thực phẩm bảo vệ sức khỏe'})">Thực
+                                        phẩm bảo vệ sức khỏe</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- ./layered -->
+                </div>
+            </div>
+            <!-- ./block category  -->
+        </div>
+
+
+
+        <div class="center_column col-xs-12 col-sm-9" id="center_column">
+
+            <div id="view-product-list" class="view-product-list">
+                <h2 class="page-heading">
+                    <span class="page-heading-title">{{vm.pageTitle | uppercase}}</span>
+                </h2>
+
+                <article class="entry-detail">
+                    <div class="entry-meta-data">
+                        <span class="author"> <i class="fa fa-user"></i> Tác giả: Admin</span>
+                        <span class="cat"><i class="fa fa-folder-o"></i> Chuyên mục: Tin tức</span>
+                        <span class="date">
+                            <i class="fa fa-calendar">
+                            </i> 04 Tháng 10, 2018
+                        </span>
+                    </div>
+                    <div class="entry-photo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="content-text clearfix">
+                        <p ng-bind-html="vm.postContent"></p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+</div>

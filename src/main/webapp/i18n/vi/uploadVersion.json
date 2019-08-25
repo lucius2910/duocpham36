@@ -1,0 +1,23 @@
+{
+    "footballBeApp": {
+        "uploadVersion" : {
+            "home": {
+                "title": "Upload Versions",
+                "createLabel": "Thêm mới một Upload Version",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Upload Version"
+            },
+            "created": "Một Upload Version mới được tạo với định danh {{ param }}",
+            "updated": "Một Upload Version cập nhật với định danh {{ param }}",
+            "deleted": "Một Upload Version đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Upload Version {{ id }}?"
+            },
+            "detail": {
+                "title": "Upload Version"
+            },
+            "name": "Name",
+            "type": "Type",
+            "createdAt": "Created At"
+        }
+    }
+}
